@@ -7,12 +7,17 @@ from datetime import datetime
 # Creating a Flask Object to manage website
 app = Flask(__name__)
 
+# Holding stations dataframe to display onto home page
+stations = pd.read_csv("data_small/stations.txt", skiprows=17)
+# Only having the dataframe hold the station ID and station name
+stations = stations[["STAID", "STANAME                                 "]]
+
 # Creating a route (URL): [domain]/ so that whenevers users first enter our
 # site the home.html will be the first page they see
 @app.route("/")
 def home():
     # returning and rendering the home.html file
-    return render_template("home.html")
+    return render_template("home.html", data=stations[["STAID", "STANAME"]].to_html())
 
 # Creating another route for the api
 # the <> symbols in <station> and <date> denote to Flask that users can
