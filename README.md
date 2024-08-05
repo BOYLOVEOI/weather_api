@@ -3,3 +3,5 @@ weather_api is a REST API that will allow a user to input a certain station alon
 
 ## API Format:
 + [domain]/api/v1/[station]/[date (in the YEAR-MONTH-DAY format)]
++ [domain]/api/v1/[station]/
++ [domain]/api/v1/yearly/[station]/[year]
