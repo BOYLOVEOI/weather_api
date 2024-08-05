@@ -89,7 +89,7 @@ def yearly(station, year):
     df['Fairenheit'] = (df['   TG'] * (9/5) + 32).round()
     # Converting the Date column to string, so we can use the str.startswith() method
     # .astype() allows us to change the values of a column to a certain data type 
-    df['    DATE'] = df['   TG'].astype(str)   
+    df['    DATE'] = df['    DATE'].astype(str)   
     # Create new dataframe that ONLY holds the records for a certain year
     # You can create a new dataframe by passing in a condition (our condition is that the resulting dataframe holds
     # records that start with the year passed in by the user)
